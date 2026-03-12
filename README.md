@@ -6,9 +6,10 @@
 Auto Blog Generator, .NET 10 kullanılarak geliştirilmiş, içerik üretimini otomatik hale getirmeyi amaçlayan bir blog yazma uygulamasıdır. Belirlenen anahtar kelimeler veya içerik stratejilerine göre otomatik olarak blog yazıları oluşturabilir ve içerik üretim sürecini büyük ölçüde hızlandırır.
 
 Çalışma mantığı;
-App_DAta içerisinde ki txt doslarını kendinize göre düzenleyin.
-appsettings.json içeriğini kedni api değeriniz ile değiştirin.
-sunucunuzun zamanlanmış görevine günlük olarak 
+-App_DAta içerisinde ki txt doslarını kendinize göre düzenleyin.
+-appsettings.json içeriğini kedni api değeriniz ile değiştirin.
+-içerideki .bak dosyası ile sqlinizde db oluşturabilirsiniz  yada migration ile yaratabilirsiniz.
+-sunucunuzun zamanlanmış görevine günlük olarak 
 https://lacasadetaki.com/admin/automation/autorun?key=burayadagizlianahtardegeriHerkesHerkesinUygulamasinaSalcaOlmasin
 kendi domainde kurulu adresinizi girin 
 
