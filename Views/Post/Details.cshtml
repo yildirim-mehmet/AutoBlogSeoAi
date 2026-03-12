@@ -1,0 +1,80 @@
+﻿@model BlogSeoAi.Models.Post
+@inject IConfiguration Config
+
+@{
+    var baseUrl = Config["Site:BaseUrl"]?.TrimEnd('/') ?? "";
+    var canonical = $"{baseUrl}/blog/{Model.Slug}";
+    var title = !string.IsNullOrWhiteSpace(Model.SeoTitle) ? Model.SeoTitle : Model.Title;
+    ViewBag.Title = title; // Bu satır hayati önem taşıyor!
+    // var desc = !string.IsNullOrWhiteSpace(Model.SeoDescription)
+    //     ? Model.SeoDescription
+    //     : (Model.Excerpt ?? "");
+    string TrimTo(string? s, int max)
+    {
+        if (string.IsNullOrWhiteSpace(s)) return "";
+        s = s.Trim();
+        return s.Length <= max ? s : s.Substring(0, max).Trim() + "…";
+    }
+
+    var desc = !string.IsNullOrWhiteSpace(Model.SeoDescription)
+        ? TrimTo(Model.SeoDescription, 160)
+        : (!string.IsNullOrWhiteSpace(Model.Excerpt)
+            ? TrimTo(Model.Excerpt, 160)
+            : TrimTo(Model.Title, 160));
+
+    var ogImage = !string.IsNullOrWhiteSpace(Model.FeaturedImageUrl)
+        ? Model.FeaturedImageUrl
+        : (Config["Site:DefaultOgImage"] ?? "");
+}
+
+@section Head {
+    <title>@title</title>
+    <link rel="canonical" href="@canonical" />
+    <meta name="description" content="@desc" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@title" />
+    <meta property="og:description" content="@desc" />
+    <meta property="og:url" content="@canonical" />
+    @if (!string.IsNullOrWhiteSpace(ogImage))
+    {
+        <meta property="og:image" content="@ogImage" />
+    }
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@title" />
+    <meta name="twitter:description" content="@desc" />
+
+    <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org",
+          "@@type": "Article",
+          "headline": @Html.Raw(System.Text.Json.JsonSerializer.Serialize(title)),
+          "description": @Html.Raw(System.Text.Json.JsonSerializer.Serialize(desc)),
+          "mainEntityOfPage": { "@@type": "WebPage", "@@id": @Html.Raw(System.Text.Json.JsonSerializer.Serialize(canonical)) },
+          "datePublished": @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.PublishedAtUtc?.ToString("o"))),
+          "dateModified": @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.PublishedAtUtc?.ToString("o"))),
+          "image": @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ogImage))
+        }
+    </script>
+}
+
+<article>
+    <header>
+        <h1>@Model.Title</h1>
+        @if (Model.PublishedAtUtc is not null)
+        {
+            <time datetime="@Model.PublishedAtUtc.Value.ToString("o")">
+                @Model.PublishedAtUtc.Value.ToLocalTime().ToString("dd.MM.yyyy")
+            </time>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.FeaturedImageUrl))
+        {
+            <img src="@Model.FeaturedImageUrl" alt="@Model.Title" width="50%" loading="lazy" />
+        }
+    </header>
+
+    <section class="content">
+        @Html.Raw(Model.ContentHtml)
+    </section>
+</article>

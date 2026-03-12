@@ -1,0 +1,34 @@
+Konu: {{$topicTitle}}
+
+Görev: Yukarıdaki konu başlığı hakkında, Motosiklet Atölyemin sitesi Motolye.com blog bölümüne eklenmek üzere, SEO uyumlu, okuyucuyu bilgilendiren ve aynı zamanda Onarım ve Arıza çözüm hizmetlerimi için bizi motosiklet arıza, bakım ve tamiri için yönlendiren 300 kelime civarında bir blog yazısı oluştur.
+
+Talimatlar:
+Yazıda "bu yazıda şundan bahsedeceğim" gibi girişler yapma, doğrudan konuya gir.
+
+Motosiklet arızası çözümleri, motosiklet bakımı, kişisel motosiklet bakımı ve günlük yaşamda karşılaşılan arızalar ve çözüm adımlarını vurgula.
+
+Metin içinde "tavsiye alın" veya "uzmana danışın" gibi ifadeler KESİNLİKLE kullanma.
+
+Motolye.com'u ve sunduğu arıza çözümündeki proösyenelliği çeşitliliğini (ince bakım, elektronik arıza, ECU onarım, usta mühendislik vb.) doğal bir şekilde öne çıkar.
+
+Metin içinde başlıkları kullan, ancak başlık HTML tag'larının (<h1>, <h2> vb.) içine EMOJİ KOYMA. Sadece iç metinde emoji kullan. Gerekirse başlığın yanına koyabilirsin.
+
+Blog yazarının tecrübeli bir motosiklet ustası ve motosiklet mühendisi olduğu izlenimini ver.
+
+Bugün haftanın kaçıncı günü ise (Pazartesi:1, Pazar:7), metin içindeki TOPLAM kelime sayısı kadar değil, metne dağıtılmış şekilde OKUYUCUNUN GÖZÜNDEN KAÇABİLECEK kadar (sadece 1 veya 2 kelimede) basit bir yazım hatası yap. Hata olarak bir kelimeden bir sesli harfi (a, e, ı, i, o, ö, u, ü) çıkar. (Örn: "devriyaj" yerine "devraj"). Bu hatayı sadece 1 veya 2 kelimede yap.
+
+Yazı içinde, "https://www.instagram.com/motolye.ankara/ sayfamızı takip edin; hem ödül kazan, hemde faaliyetlerimizi yakından takip edin." tarzında metinler olsun
+
+Başlıkları (<h2>, <h3> gibi) ve paragrafları (<p>) HTML etiketleriyle yapılandır.
+
+Metin içinde geçen ve site içi arama ile ilişkilendirilebilecek anahtar kelimeleri, site içi link olarak göster. Örnek: Bir "Marj Arızası" bahsi geçtiğinde, link şu şekilde olmalı: <a href="https://Motolye.com/?s=marş+arızası">marj arıza</a>.
+
+Okuyucuyu sitedeki ilgili koleksiyonları keşfetmeye ve alışveriş yapmaya ikna edici, cezbedici bir dil kullan.
+
+Metni oluştururken, mtosiklet sever ve motosiklet ustadlar üstadı olduğunu unutma.
+
+Metin uzunluğu yaklaşık 300 kelime civarında olsun.
+
+Site adresi: https://Motolye.com, Gerekli yerlerde ana sayfaya veya arama sonuçlarına <a href="https://Motolye.com/?s=Aranan+Kelime">aranan kelime</a> formatında linkler ver.
+
+Önemli: Bana yazdığın metni gönderdiğinde, konu dışında ek açıklama yapma. Sadece yazdığın HTML'li blog metni olsun.

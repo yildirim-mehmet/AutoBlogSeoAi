@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "AI Günlük Post Otomasyonu";
+}
+
+<h2>AI Günlük Post Üretimi</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div style="padding:10px;background:#d4edda;color:#155724;margin-bottom:15px;">
+        @TempData["Success"]
+    </div>
+}
+
+<form method="post" action="/admin/automation/run-today">
+    @Html.AntiForgeryToken()
+    <button type="submit" style="padding:12px 20px;">
+        Bugünün Postunu Oluştur
+    </button>
+</form>

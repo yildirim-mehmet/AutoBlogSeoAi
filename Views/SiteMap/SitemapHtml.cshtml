@@ -1,0 +1,16 @@
+﻿@model List<dynamic>
+@{
+    ViewData["Title"] = "Site Haritası";
+}
+
+<h1>Site Haritası</h1>
+
+<ul>
+    @foreach (var p in Model)
+    {
+        <li>
+            <a href="/blog/@p.Slug">@p.Title</a>
+            <small> (@(p.PublishedAtUtc?.ToLocalTime().ToString("dd.MM.yyyy")))</small>
+        </li>
+    }
+</ul>

@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #0a0a0a;
+  color: #e0e0e0;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  min-height: 700px;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://w0.peakpx.com/wallpaper/440/769/HD-wallpaper-yamaha-yamaha-yzf-r1.jpg') center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 1100px;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 1.8s ease-out;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  color: #ff6600;
+  text-shadow: 0 0 30px #ff6600aa, 0 0 60px #000;
+  margin-bottom: 20px;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 20px #ff6600aa, 0 0 40px #ff660055; }
+  to   { text-shadow: 0 0 40px #ff6600ff, 0 0 80px #ff6600aa; }
+}
+
+.hero p {
+  font-size: 1.6rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 50px;
+  background: #ff6600;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.4s;
+  box-shadow: 0 0 30px #ff660080;
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.08);
+  background: #ff8533;
+  box-shadow: 0 0 50px #ff6600cc;
+}
+
+/* Sections */
+section {
+  padding: 120px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #ff6600;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 120px;
+  height: 5px;
+  background: #ff6600;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background: #111;
+  padding: 40px 30px;
+  border-radius: 15px;
+  border: 1px solid #222;
+  transition: all 0.5s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  border-color: #ff6600;
+  box-shadow: 0 20px 40px rgba(255,102,0,0.2);
+}
+
+.card h3 {
+  color: #ff8533;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.motion-bike {
+  width: 100%;
+  max-width: 900px;
+  margin: 80px auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(0,0,0,0.9);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1.5s ease-out;
+}
+
+.motion-bike.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.keyword-list {
+  background: #111;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #222;
+  line-height: 2;
+  font-size: 1.1rem;
+}
+
+.keyword-list p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.keyword-list span {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.1rem;
+  color: #888;
+}
+
+.nav-link {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.nav-link a {
+  color: #ff6600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.nav-link a:hover {
+  border-bottom-color: #ff6600;
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 5rem; }
+  section { padding: 80px 15px; }
+  h2 { font-size: 2.5rem; }
+}

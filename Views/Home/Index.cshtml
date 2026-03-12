@@ -1,0 +1,118 @@
+﻿@model List<BlogSeoAi.Models.Post>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motolye | Mesai Saatleri Sonrası Açık Motosiklet Tamircisi Ankara</title>
+    <meta name="description" content="Ankara'da 5'ten sonra, 6'dan sonra, 7'den sonra, 8'den sonra, mesai sonrası ve pazar günü açık motosiklet tamircisi. Profesyonel motor bakımı, büyük hacimli motor tamiri, Japon ve Avrupa grubu servis.">
+    <meta name="keywords" content="mesai saatleri sonrası açık motosiklet tamircisi, 5 den sonra açık motosiklet tamircisi, Ankara motor atölyesi, Ankara motosiklet ustası tavsiye, İskitler motosiklet tamircileri, Ostim motor tamir servisleri, Ankara motor rektefiye, pazar günü açık motosiklet tamircisi Ankara">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/style.css">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Motolye</h1>
+            <p>
+                Mesai saatleri sonrası açık motosiklet tamircisi Ankara<br>
+                5’ten sonra, 6’dan sonra, 7’den sonra, 8’den sonra ve pazar günü bile hizmetinizde!
+            </p>
+
+            <a href="https://api.whatsapp.com/send/?phone=905056054341&text=Merhaba+motorumun+atolye+islemleri+icin+bilgi+almak+adina+yaz%C4%B1yorum.&type=phone_number&app_absent=0" class="btn">
+                HEMEN YAZ <img style="max-width:55px; vertical-align: middle;" src="https://static.whatsapp.net/rsrc.php/v4/yB/r/ctSyw04iKnl.png" alt="WhatsApp">
+            </a>
+            <br>
+            <img style="max-width:155px; margin-top: 20px;" src="motolyeankaramotortamir.gif" alt="Motolye Ankara Motor Tamir">
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Ankara Profesyonel Motosiklet Servisi</h2>
+        <div class="services-grid">
+            <div class="card"><h3>Ankara motor atölyesi & motor bakımı</h3><p>Ankara motor servisi, Ankara motosiklet ustası tavsiye arayanlar için güvenilir adres.</p></div>
+            <div class="card"><h3>Ankara profesyonel motor mekanik tamir</h3><p>Ankara motor rektefiye ve revizyon, büyük hacimli motor tamiri (600cc ve üstü için uzman).</p></div>
+            <div class="card"><h3>İskitler – Ostim – Yenimahalle – Çankaya – Sincan – Etimesgut – Şaşmaz – Batıkent</h3><p>Ankara'nın her bölgesinde hizmet.</p></div>
+            <div class="card"><h3>Japon & Avrupa & Ekonomik Grup Servis</h3><p>Honda/Yamaha/Kawasaki/Suzuki • BMW/KTM/Ducati • Bajaj/RKS/Kuba/Mondial</p></div>
+            <div class="card"><h3>Scooter & Maxi Scooter & Ek Hizmetler</h3><p>Varyatör bakımı, yol yardım, motor çekici.</p></div>
+            <div class="card"><h3>Teknik Tamir & Ekspertiz</h3><p>Elektrik arıza, beyin, ekspertiz, lastik/balans.</p></div>
+        </div>
+    </section>
+
+    <img src="https://wallpapers.com/images/hd/ultra-hd-matte-black-motorcycle-fv1506u417lapcak.jpg"
+         alt="Siyah supersport motosiklet hızda" class="motion-bike">
+
+    <!-- ✅ SON 10 AI İÇERİK (DB’den) -->
+    <section id="daily">
+        <h2>Güncel İçerikler (Son 10)</h2>
+
+        <div class="services-grid">
+            @foreach (var post in Model)
+            {
+                <div class="card" style="opacity:1; transform:none;">
+                    <h3>
+                        <a href="/blog/@post.Slug" style="color:#ff8533; text-decoration:none;">
+                            @post.Title
+                        </a>
+                    </h3>
+
+                    @if (!string.IsNullOrWhiteSpace(post.FeaturedImageUrl))
+                    {
+                        <img src="@post.FeaturedImageUrl" alt="@post.Title"
+                             style="width:100%; border-radius:12px; margin:12px 0;" loading="lazy" />
+                    }
+
+                    <p>@GetPlainExcerpt(post)</p>
+
+                    <div class="nav-link" style="margin-top:12px;">
+                        <a href="/blog/@post.Slug">→ Devamını Oku ←</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="nav-link">
+            <a href="/blog">→ Tüm Yazıları Gör ←</a>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <h2>Neden Motolye?</h2>
+        <div class="services-grid">
+            <div class="card"><h3>Esnek Çalışma Saatleri</h3><p>Mesai bitse de işiniz bitmez!</p></div>
+            <div class="card"><h3>Pazar Günü Hizmet</h3><p>Acil durumlarda yalnız değilsiniz.</p></div>
+            <div class="card"><h3>Tüm Markalara Uzmanlık</h3><p>Japon, Avrupa, ekonomik grup.</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            &copy; 2026 Motolye | Ankara'nın En Güvenilir Mesai Sonrası Motosiklet Tamircisi<br>
+            Hızlı servis • Uygun fiyat • 7/24 Hizmet
+        </p>
+    </footer>
+
+    <script src="~/script.js"></script>
+</body>
+</html>
+
+@functions {
+    string GetPlainExcerpt(BlogSeoAi.Models.Post post)
+    {
+        if (!string.IsNullOrWhiteSpace(post.Excerpt))
+            return post.Excerpt!;
+
+        var text = System.Text.RegularExpressions.Regex.Replace(post.ContentHtml ?? "", "<.*?>", " ");
+        text = System.Net.WebUtility.HtmlDecode(text);
+        text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", " ").Trim();
+
+        const int maxLength = 220;
+        return text.Length <= maxLength ? text : text.Substring(0, maxLength).Trim() + "…";
+    }
+}
